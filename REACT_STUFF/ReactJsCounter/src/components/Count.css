@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Garamond&family=Gill+Sans&family=Trebuchet+MS&display=swap');
+body{
+    background-color: cadetblue;
+}
+.cont{
+    height: 700px;
+    width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: xx-large;
+  
+  font-style: italic;
+  font-weight: bold;
+  color: antiquewhite;
+  }
+
+  .count{
+  display: flex;
+    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+    padding-right: 20px;
+  border: antiquewhite solid 3px;
+  background-color: grey;
+  width: 770px;
+    border-radius: 10px;
+  }
+
+  .btn{
+    border: beige solid 2px;
+    height: 50px;
+    width: 150px;
+    background-color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: antiquewhite;
+    font-size: large;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+  }
+  .btn:hover{
+    border: black solid 2px;
+    height: 50px;
+    width: 150px;
+    background-color: antiquewhite;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    font-size: large;
+    border-radius: 10px;
+
+  }
