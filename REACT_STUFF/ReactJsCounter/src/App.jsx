@@ -1,6 +1,6 @@
 
 import './App.css'
-import Count from './components/count'
+import Count from './components/Count'
 function App() {
 
   return (
