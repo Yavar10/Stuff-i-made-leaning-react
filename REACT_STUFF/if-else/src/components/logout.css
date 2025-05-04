@@ -1,0 +1,43 @@
+.btn {
+    background: linear-gradient(to right, #6a11cb, #2575fc, #6a11cb);
+    background-size: 200% auto;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
+    animation: colorChange 3s linear infinite;
+    transform-origin: center;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@keyframes colorChange {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(106, 17, 203, 0.6), 0 4px 6px rgba(37, 117, 252, 0.4);
+}
+
+.btn:active {
+    background-color: #4a148c;
+    transform: scale(0.95);
+}
+
+.container {
+    border: black solid 1px;
+    height: 100px;
+    width: 100px;
+}

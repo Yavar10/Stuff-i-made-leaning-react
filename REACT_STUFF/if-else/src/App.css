@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff; /* White background */
+}
+
+div.with-border {
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #4caf50; /* Green border */
+  background-color: #ffffff; /* White background */
+  color: #333333; /* Dark text color */
+  font-size: 24px; /* Larger text */
+  border-radius: 10px;
+}
