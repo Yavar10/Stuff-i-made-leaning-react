@@ -1,7 +1,12 @@
 import React from 'react'
 import './count.css'
 const Count = () => {
-    const [count, setCount] = React.useState(0)
+    const [count, setCount] = React.useState(60)
+      const audio = new Audio('../public/nice-sound-effect-95595.mp3');
+      if(count==69){
+        audio.play();
+      }
+  
   return (
     <div className="cont">
         THE COUNTER MACHINE 
