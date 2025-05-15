@@ -1,0 +1,107 @@
+/* General body styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Styling headers (score and time left) */
+h2 {
+    font-size: 24px;
+    margin: 5px 0;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Score and timer display area */
+#score, #tLeft {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6666;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Grid container */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-gap: 20px;
+    justify-content: center;
+    margin: 30px auto;
+    padding: 20px;
+    border: 5px solid #ffcc00;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid squares */
+.sq {
+    width: 120px;
+    height: 120px;
+    background-color: #222;
+    border-radius: 10px;
+    border: 3px solid #444;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s ease;
+}
+
+/* Mole appearance */
+.sq.mole {
+    background-color: #ff5733;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/616/616430.png'); /* Replace with your own mole icon if needed */
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 0px 15px rgba(255, 87, 51, 0.8);
+}
+
+/* Click and hover effect */
+.sq:hover {
+    transform: scale(1.1);
+    background-color: #555;
+}
+
+/* Animation for the mole */
+@keyframes mole-pop {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.sq.mole {
+    animation: mole-pop 0.5s ease-in-out;
+}
+
+/* Game over styling for alert */
+.alert {
+    color: #ff6666;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 90px);
+        grid-gap: 15px;
+    }
+    .sq {
+        width: 90px;
+        height: 90px;
+    }
+}

@@ -1,0 +1,15 @@
+window.addEventListener('click',function(a){console.log("window");
+    a.stopPropagation
+},true);
+document.addEventListener('click',function(b){console.log("doc");
+b.stopPropagation
+},true);
+document.querySelector(".d1").addEventListener('click',function(c){console.log("Div1");
+    c.stopPropagation
+},true);
+document.querySelector(".d2").addEventListener('click',function(d){console.log("Div2");
+    d.stopPropagation
+},true);
+document.querySelector(".btn").addEventListener('click',function(e){console.log("Button");
+    e.stopPropagation
+},true);

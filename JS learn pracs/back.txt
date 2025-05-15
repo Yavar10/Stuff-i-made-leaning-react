@@ -1,0 +1,26 @@
+ghvvvvv
+const x=document.querySelector('#hello');
+console.log(x);
+console.log("bihari");
+x.style.color="red";
+b=document.querySelector("body");
+x.style.fontSize="4mm";
+const g=document.querySelectorAll("#g");
+console.log(g[0].innerText);
+for(i=0;i<g.length;i++)
+    {
+    g[i].style.fontSize="50px";
+    g[i].style.color="white";
+    }
+   
+const c=document.createElement("li");
+c.innerText="yes sir"
+const ul=document.querySelector("ul");
+ul.append(c);
+console.log(g[2].innerText);
+const li =document.querySelectorAll('li');
+li.classList.add("list");
+console.log(g.length);
+
+console.log(ul.parentElement.parentElement);
+
