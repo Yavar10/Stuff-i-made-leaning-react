@@ -55,12 +55,12 @@ function rsts(pid)
                   <NavLink to={`/?id=${paste?._id}`}>EDIT</NavLink>
                 </button>
                 <button>
-                <NavLink to={`/PSlice/${paste?._id}`}>View(NL)</NavLink>
+                <NavLink to={`/PSlice/${paste?._id}`}>View</NavLink>
                 </button>
-                <button>
+               {/*  <button>
                 <a href={`/PSlice/${paste?._id}`}>
                 View(AT)                </a>
-                </button>
+                </button> */}
                 <button onClick={()=>handleDel(paste._id)}>Delete</button>
                 <button onClick={()=>{
                   navigator.clipboard.writeText(paste?.content)
