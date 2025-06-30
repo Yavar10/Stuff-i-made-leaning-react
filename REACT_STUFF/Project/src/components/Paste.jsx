@@ -31,7 +31,6 @@ function rsts(pid)
   IF YOU CAN SEE THIS RED BOX, Tailwind is working
 </div> */}
 
-      <br />
       <h1>
       PASTEY BOARD
     </h1>

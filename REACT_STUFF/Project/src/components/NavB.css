@@ -1,0 +1,25 @@
+/* NavB.css */
+
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 650px;
+  padding: 5px;
+  width: 50vh;
+}
+
+.nav-link {
+  margin: 0 10px;
+}
+
+.nav-link h1 {
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.nav-link h1:hover {
+  color: #007bff;
+}
