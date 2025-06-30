@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import { RouterProvider } from 'react-router-dom'
 import './App.css'
-import NavB from './components/navB';
+import NavB from './components/NavB';
 import Home from './components/Home';
 import Paste from './components/Paste';
 import Vpaste from './components/Vpaste';

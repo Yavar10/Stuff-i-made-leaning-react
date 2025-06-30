@@ -11,6 +11,7 @@ const pastes=useSelector((state)=>state.PSlice.pastes);
 console.log(pastes)
 const [searchTerm, setSearchTerm] = useState("");
 const dispatch=useDispatch();
+let n=0
 
 const filteredData=pastes.filter(
   (paste)=>paste.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -47,7 +48,8 @@ function rsts(pid)
 
             return(
             <div className='border-solid flex flex-col min-h-[50px]'>
-              <button className="rounded-[10px]" onClick={()=>rsts(paste._id)}>Reset</button>
+              <button disabled>NOTE {n=n+1}</button>
+              
               <h2> {paste.title}
                 </h2>
                 <div className='flex flex-row place-content-evenly p-[10px]'>
@@ -55,12 +57,12 @@ function rsts(pid)
                   <NavLink to={`/?id=${paste?._id}`}>EDIT</NavLink>
                 </button>
                 <button>
-                <NavLink to={`/PSlice/${paste?._id}`}>View(NL)</NavLink>
+                <NavLink to={`/PSlice/${paste?._id}`}>View</NavLink>
                 </button>
-                <button>
+               {/*  <button>
                 <a href={`/PSlice/${paste?._id}`}>
                 View(AT)                </a>
-                </button>
+                </button> */}
                 <button onClick={()=>handleDel(paste._id)}>Delete</button>
                 <button onClick={()=>{
                   navigator.clipboard.writeText(paste?.content)
@@ -79,6 +81,15 @@ function rsts(pid)
 
       }
     </div>
+    <br />
+    <div className="rounded-[10px] flex justify-center m-4">
+  <button
+    onClick={() => dispatch(rst())}
+    className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+  >
+    Delete All
+  </button>
+</div>
     </div>
   )
 }
