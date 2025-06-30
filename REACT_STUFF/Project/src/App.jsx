@@ -24,8 +24,18 @@ const router=  createBrowserRouter([
     </div>
 
   },
+
   {
-    path:"/PSlice/:id",
+  path: "/PSlice/:id", // ← this is what matches /PSlice/mcixwu4u
+  element: (
+    <div>
+      <NavB />
+      <Vpaste />
+    </div>
+  )
+},
+  /* {
+    path:"/PSlice/?id",
     element:
     <div>
        <NavB/>
@@ -34,14 +44,14 @@ const router=  createBrowserRouter([
 
   },
   {
-    path:"/PSlice/:id=15",
+    path:"/PSlice/?id=15",
     element:
     <div>
        <NavB/>
        <Home/>
     </div>
 
-  },
+  }, */
 ]
 );
 

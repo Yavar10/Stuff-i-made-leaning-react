@@ -14,7 +14,7 @@ export const PSlice = createSlice({
 
       state.pastes.push(paste)
       localStorage.setItem("pastes",JSON.stringify(state.pastes));
-      toast("Paste Created Successfully")
+      toast.success("Paste Created Successfully")
 
     },
     udpT: (state,action) => {
@@ -25,17 +25,29 @@ export const PSlice = createSlice({
       if(index>=0)
       {
         state.pastes[index]=paste;
-
         localStorage.setItem("pastes",JSON.stringify(state.pastes));
         toast.success("Paste updated");
       }
     },
-    rst: (state, action) => {
+    rst: (state) => {
       state.pastes=[];
       localStorage.removeItem("pastes")
     },
     removeFrTing:(state,action)=>{
+        const pasteId=action.payload;
 
+        console.log(pasteId)
+        const index =state.pastes.findIndex((item)=>
+        item._id===pasteId);
+
+        if(index>=0)
+        {
+          state.pastes.splice(index,1);
+
+          localStorage.setItem("pastes",JSON.stringify(state.pastes));
+
+          toast.success("Paste deleted");
+        }
     }
   }
 })
