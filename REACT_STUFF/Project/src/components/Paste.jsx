@@ -82,7 +82,7 @@ function rsts(pid)
     </div>
     <br />
     <div className="rounded-[10px] flex justify-center m-4">
-  <button disabled
+  <button 
     onClick={() => dispatch(rst())}
     className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
   >
