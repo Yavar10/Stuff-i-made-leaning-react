@@ -98,7 +98,7 @@ function Home() {
       ) : (
         todos.map(todo => (
           <div className="tk" key={todo._id}>
-           <div className="dot"></div> 
+           <div className="dot">•</div> 
           {todo.task}
           <button className="db" onClick={()=>deltask(todo._id)}>
           Delete
