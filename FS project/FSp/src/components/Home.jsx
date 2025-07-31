@@ -95,7 +95,7 @@ function Home() {
       {
       todos.length === 0 ? (
         <div>
-          <h3>No Record</h3>
+          <h3>No Chirps Heard</h3>
         </div>
       ) : (
         todos.map(todo => (
