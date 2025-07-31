@@ -1,0 +1,14 @@
+.tk{
+    border: solid white 2px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px;
+    transition: background-color 0.25s;
+}
+.tk:hover{
+    background-color: aliceblue;
+    color: black;
+}
+.db{
+padding: 2px;
+}
