@@ -82,6 +82,10 @@ app.delete("/del",async(req,res)=>{
   const dtx=await Todo.findByIdAndDelete(req.body._id)
   res.status(200).send("yesssss")
 })
+app.delete("/deleteAll",async(req,res)=>{
+  const dtx=await Todo.deleteMany()
+  res.status(200).send("yesssss")
+})
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import "./css/Create.css"
+//import {fetchTodos} from "Home.jsx"
 import axios from 'axios'
 
 function Create({onTaskAdded}) {
@@ -11,7 +12,8 @@ function Create({onTaskAdded}) {
     axios.post("https://nots-j68v.onrender.com/add", { task })
       .then(() => {
         setTask("");            // Clear input
-        onTaskAdded();          // Refresh task list in Home
+        onTaskAdded();    
+              // Refresh task list in Home
       })
       .catch((err) => console.log(err));
   };

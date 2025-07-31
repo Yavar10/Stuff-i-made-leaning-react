@@ -70,6 +70,18 @@ function Home() {
     .catch((err) => console.log(err));
   }
 
+  const delAll=()=>{
+    console.log("DELETTIIIIIIIIIIIIINGGGGGGGGGGGGGGGGGGG ALLLLLLLLLLLLLLLLLLLLL")
+    axios
+      .delete("https://nots-j68v.onrender.com/deleteAll", {
+    })
+    .then((res) => {
+      console.log("Deleted: ALL", res.data);
+      fetchTodos(); // <-- refresh the list
+    })
+    .catch((err) => console.log(err));
+  }
+
   useEffect(() => {
     fetchTodos();
   }, []);
@@ -92,6 +104,11 @@ function Home() {
         ))
       )
       }
+
+
+        <button onClick={()=>delAll()}>DELETE ALL</button>
+
+
     </div>
   );
 }
