@@ -8,7 +8,7 @@ function Create({onTaskAdded}) {
     const handleCreate = () => {
     if (!task.trim()) {return};
 
-    axios.post("http://localhost:2000/add", { task })
+    axios.post("https://nots-j68v.onrender.com/add", { task })
       .then(() => {
         setTask("");            // Clear input
         onTaskAdded();          // Refresh task list in Home

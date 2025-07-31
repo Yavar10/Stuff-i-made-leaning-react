@@ -52,7 +52,7 @@ function Home() {
   const fetchTodos = () => {
     console.log("FETTTTCHIIIIIIIIIIIIIIINGGGGGGGGGGGGGGGGGGG")
     axios
-      .get("http://localhost:2000/get")
+      .get("https://nots-j68v.onrender.com/get")
       .then((res) => setTodos(res.data))
       .catch((err) => console.log(err));
   };
@@ -60,7 +60,7 @@ function Home() {
   const deltask=(id)=>{
     console.log("DELETTIIIIIIIIIIIIINGGGGGGGGGGGGGGGGGGG")
     axios
-      .delete("http://localhost:2000/del", {
+      .delete("https://nots-j68v.onrender.com/del", {
       data: { _id: id }
     })
     .then((res) => {
