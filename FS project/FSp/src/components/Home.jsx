@@ -106,7 +106,7 @@ function Home() {
       }
 
 
-        <button onClick={()=>delAll()}>DELETE ALL</button>
+        <button disabled:true onClick={()=>delAll()}>DELETE ALL</button>
 
 
     </div>
