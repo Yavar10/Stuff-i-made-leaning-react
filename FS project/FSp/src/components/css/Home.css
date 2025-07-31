@@ -1,7 +1,14 @@
 .tk{
     border: solid white 2px;
     border-radius: 10px;
-    padding: 5px;
+    padding: 5px;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;                /* takes remaining space */
+  word-wrap: break-word;  /* breaks long words */
+  overflow-wrap: break-word; /* modern equivalent */
+  white-space: normal;  
     margin: 5px;
     transition: background-color 0.25s;
 }
@@ -9,6 +16,7 @@
     background-color: aliceblue;
     color: black;
 }
-.db{
-padding: 2px;
+.dot{
+    padding: 2px;
+    margin: 2px;
 }
