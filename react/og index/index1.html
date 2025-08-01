@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyay Sahayak - Legal Application Assistant</title>
+    <style>
+        :root {
+            --primary: #3f51b5;
+            --primary-dark: #303f9f;
+            --primary-light: #c5cae9;
+            --accent: #ff4081;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --divider: #bdbdbd;
+            --background: #f5f5f5;
+            --card-bg: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-content {
+            flex: 1;
+            padding-right: 2rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card-title {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-title i {
+            margin-right: 10px;
+        }
+        
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .language-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .language-btn {
+            background-color: var(--primary-light);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .language-btn.active, .language-btn:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .input-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        button.secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+        
+        button.secondary:hover {
+            background-color: var(--primary-light);
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 1rem;
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            resize: vertical;
+        }
+        
+        .record-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--accent);
+        }
+        
+        .record-btn:hover {
+            background-color: #e91e63;
+        }
+        
+        .form-preview {
+            background-color: #f9f9f9;
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            padding: 1rem;
+            min-height: 200px;
+            margin-top: 1rem;
+        }
+        
+        .summary-section {
+            margin-top: 1rem;
+        }
+        
+        .faq-section {
+            margin-top: 3rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--divider);
+            padding-bottom: 1rem;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+            }
+            
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i>⚖️</i> Nyay Sahayak
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#app">Application</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container" id="home">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Empowering Citizens Through Simplified Legal Processes</h1>
+                <p>Nyay Sahayak helps you create legal applications in your regional language without the need for a lawyer. Our AI-powered tool simplifies court procedures and ensures your applications are filed correctly.</p>
+                <div class="input-controls">
+                    <button onclick="location.href='#app'">Start Creating Application</button>
+                    <button class="secondary" onclick="location.href='#faq'">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="a121c3ad-5dd0-4233-a79d-ced2af6e2f70.png" alt="Legal assistance illustration">
+            </div>
+        </section>
+        
+        <section id="app" class="card">
+            <h2 class="card-title"><i>📝</i> Create Your Legal Application</h2>
+            <div class="language-selector">
+                <button class="language-btn active">Hindi</button>
+                <button class="language-btn">Bengali</button>
+                <button class="language-btn">Tamil</button>
+                <button class="language-btn">Telugu</button>
+                <button class="language-btn">Marathi</button>
+                <button class="language-btn">Gujarati</button>
+                <button class="language-btn">Kannada</button>
+                <button class="language-btn">Malayalam</button>
+                <button class="language-btn">Punjabi</button>
+                <button class="language-btn">English</button>
+            </div>
+            
+            <div class="input-section">
+                <div>
+                    <h3>Describe Your Case</h3>
+                    <p>Tell us about your legal matter in your preferred language</p>
+                    <textarea placeholder="Type your case details here..."></textarea>
+                    <div class="input-controls">
+                        <button class="record-btn"><i>🎤</i> Record Voice</button>
+                        <button class="secondary">Upload Document</button>
+                    </div>
+                </div>
+                
+                <div class="two-column">
+                    <div>
+                        <h3>Case Summary</h3>
+                        <p>AI-generated summary of your case</p>
+                        <div class="form-preview summary-section">
+                            <p>Your case summary will appear here after processing...</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>Legal Application Preview</h3>
+                        <p>Auto-filled application form</p>
+                        <div class="form-preview">
+                            <p>Your legal application will appear here...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-controls">
+                    <button>Generate Application</button>
+                    <button class="secondary">Edit Application</button>
+                    <button class="secondary">Download PDF</button>
+                </div>
+            </div>
+        </section>
+        
+        <section id="faq" class="faq-section card">
+            <h2 class="card-title"><i>❓</i> Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    What types of legal applications can I create with this tool?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    You can create various types of applications including consumer complaints, small claims, RTI applications, property disputes, and more. The tool guides you through the process based on your specific needs.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How does the voice recognition work with regional languages?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    We use the BHASHINI API which supports multiple Indian languages. Simply select your preferred language and start speaking. The system will recognize and transcribe your speech accurately.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Is my information secure and private?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, we prioritize your privacy. Your data is encrypted and we don't store any personal information beyond what's necessary for your application. All processing happens securely on our servers.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do I need internet access to use this tool?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, an internet connection is required to access our speech recognition, AI processing, and document generation features.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    How accurate is the auto-filled application?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Our system uses advanced AI to accurately extract relevant information from your input. However, we recommend reviewing the auto-filled application before submission to ensure all details are correct.
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" class="card">
+            <h2 class="card-title"><i>ℹ️</i> About Nyay Sahayak</h2>
+            <p>Nyay Sahayak is an initiative to democratize access to legal processes. Our mission is to empower citizens across India to navigate the legal system without barriers of language, technical knowledge, or the need for expensive legal assistance.</p>
+            <p>By leveraging cutting-edge AI technologies such as the BHASHINI API for language processing, Gemini API for summarization, and Vortex AI for legal analysis, we provide an accessible platform for creating accurate legal applications.</p>
+            <p>Our team consists of legal experts, technologists, and language specialists committed to simplifying legal procedures for everyone.</p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Nyay Sahayak - Legal Application Assistant. All rights reserved.</p>
+        <p>Contact: support@nyaysahayak.org | Helpline: 1800-XXX-XXXX</p>
+    </footer>
+    
+    <script>
+        // Toggle FAQ answers
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('show');
+                const plusMinus = question.querySelector('span');
+                plusMinus.textContent = answer.classList.contains('show') ? '-' : '+';
+            });
+        });
+        
+        // Language selector
+        document.querySelectorAll('.language-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.language-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+        
+        // Simulate record button functionality
+        document.querySelector('.record-btn').addEventListener('click', function() {
+            this.innerHTML = this.innerHTML.includes('Record') ? 
+                '<i>⏹️</i> Stop Recording' : '<i>🎤</i> Record Voice';
+                
+            if (this.innerHTML.includes('Stop')) {
+                alert('Recording started. Speak clearly in your selected language.');
+            } else {
+                alert('Recording stopped. Processing your speech...');
+                setTimeout(() => {
+                    document.querySelector('.summary-section').innerHTML = 
+                        '<h4>Case Summary:</h4>' +
+                        '<p>This appears to be a consumer complaint regarding a defective mobile phone purchased on 15 March 2025. The device has experienced multiple issues including battery failure and screen malfunctions within the warranty period. The consumer has attempted to resolve the issue with the retailer on three occasions without success.</p>';
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
