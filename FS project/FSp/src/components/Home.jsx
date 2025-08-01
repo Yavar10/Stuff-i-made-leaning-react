@@ -1,50 +1,8 @@
-/* import { useState,useEffect } from "react"
-import Create from "./Create"
-import axios from "axios";
- 
-function Home() {
-
-    const [todos,setTodos]= useState([]);
-
-useEffect(() => {
-    axios.get("http://localhost:2000/get")
-      .then((res) => setTodos(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-
-  return (
-    <div>
-       <h1>
-            Notes App
-        </h1>
-        <Create/>
-        {
-          (todos.length===0)?
-          <div>
-            <h3>
-                No Record
-            </h3>
-          </div>
-          :
-           todos.map(todo => (
-  <div key={todo._id}>
-    {todo.task}
-  </div>
-))
-            
-        }
-    </div>
-  )
-}
-
-export default Home
-
- */
-
 import { useState, useEffect } from "react";
 import Create from "./Create";
 import "./css/Home.css"
 import axios from "axios";
+import { toast } from 'react-toastify';
 
 function Home() {
   const [todos, setTodos] = useState([]);
@@ -65,9 +23,12 @@ function Home() {
     })
     .then((res) => {
       console.log("Deleted:", res.data);
+      toast.success("Deletion successful!");
       fetchTodos(); // <-- refresh the list
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {console.log(err)
+      toast.error("Oops! Something went wrong.");
+    });
   }
 
   const delAll=()=>{
@@ -77,6 +38,7 @@ function Home() {
     })
     .then((res) => {
       console.log("Deleted: ALL", res.data);
+      toast.success("Deletion successful!");
       fetchTodos(); // <-- refresh the list
     })
     .catch((err) => console.log(err));

@@ -2,6 +2,8 @@ import { useState } from "react"
 import "./css/Create.css"
 //import {fetchTodos} from "Home.jsx"
 import axios from 'axios'
+import { toast } from 'react-toastify';
+
 
 function Create({onTaskAdded}) {
 
@@ -12,10 +14,14 @@ function Create({onTaskAdded}) {
     axios.post("https://nots-j68v.onrender.com/add", { task })
       .then(() => {
         setTask("");            // Clear input
-        onTaskAdded();    
+        onTaskAdded();
+        toast.success("Chirp successful!");
               // Refresh task list in Home
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {console.log(err)
+        toast.error("Oops! Something went wrong.");
+
+      });
   };
 
   return (
