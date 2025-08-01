@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsitive Center</title>
+    <style>
+        /* Root Colors and Font */
+        :root {
+            --primary-color: #ffcc00;
+            --secondary-color: #333333;
+            --accent-color: #FFA500;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --font-family: 'Arial', sans-serif;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        /* Header and Navbar */
+        header {
+            background: var(--primary-color);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: var(--secondary-color);
+        }
+
+        /* Navbar Links */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        .navbar a {
+            font-size: 1.1em;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Hero Image */
+        .hero-image {
+            background: url('BGLESS-removebg-preview.png') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .hero-text {
+            font-size: 2.5em;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px 30px;
+            border-radius: 5px;
+        }
+
+        /* Section Headers */
+        h2 {
+            font-size: 2.2em;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Pet Card Styling */
+        .pet-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pet-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .pet-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .pet-card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pet-card-content h3 {
+            font-size: 1.5em;
+            color: var(--secondary-color);
+            margin: 10px 0;
+        }
+
+        .pet-card-content p {
+            color: #666;
+            font-size: 1em;
+            margin: 5px 0;
+        }
+
+        .pet-card-content a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .pet-card-content a:hover {
+            background-color: #ff8c00;
+        }
+
+        /* Grid for Pet Cards */
+        .pet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-image {
+                height: 300px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header and Navbar -->
+    <header>
+        <h1>Pawsitive Center</h1>
+        <nav class="navbar">
+            <a href="#adopt">Adopt</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Image with Text Overlay -->
+    <div class="hero-image">
+        <div class="hero-text">Find Your New Best Friend</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Adopt Section -->
+        <section id="adopt">
+            <h2>Available Pets for Adoption</h2>
+            <div class="pet-grid">
+                <!-- Pet Card 1 -->
+                <div class="pet-card">
+                    <img src="https://cdn.shopify.com/s/files/1/0525/2500/7030/files/Happy_Lab_187e918c-86e2-4410-aa92-3bc573842651_1024x1024.jpg?v=1712229764" alt="Arrow the Labrador">
+                    <div class="pet-card-content">
+                        <h3>Arrow</h3>
+                        <p>Age: 1 year</p>
+                        <p>Breed: Labrador Retriever</p>
+                        <p>Friendly and playful, Arrow loves people!</p>
+                        <a href="buddy.html">Learn More</a>
+                    </div>
+                </div>
+                <!-- Pet Card 2 -->
+                <div class="pet-card">
+                    <img src="https://example.com/whiskers.jpg" alt="Whiskers the Cat">
+                    <div class="pet-card-content">
+                        <h3>Samuel Andres Mathew III</h3>
+                        <p>Age: 2 years</p>
+                        <p>Breed: Domestic Shorthair</p>
+                        <p>Curious and affectionate, loves exploring.</p>
+                        <a href="whisk.html">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At Pawsitive Center, we believe in giving every pet a second chance. Our mission is to find loving homes for our furry friends and promote responsible pet ownership.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Interested in adoption? Reach out to us!</p>
+            <p>Email: pawsitive@gmail.com | Phone: 990-000-0000</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Pawsitive Center. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

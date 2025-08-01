@@ -1,0 +1,27 @@
+.H{
+    background-color: rgb(43, 43, 95);
+    color: yellow;
+    
+    }
+    head{
+        background-color: rgb(43, 43, 95);
+    }
+    .nav{
+        background-color: rgb(99, 37, 37);
+        color: yellow;
+    }
+    .nav :hover{
+        background-color: black;
+        color: greenyellow;
+        font-weight: bolder;
+        }
+        .nav :visited
+        {
+            color:yellow;
+        font-weight: bolder;
+        }
+        body
+        {
+    background-color: rgb(43, 43, 95);
+        }
+       

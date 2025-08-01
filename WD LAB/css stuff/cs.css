@@ -1,0 +1,15 @@
+body{
+    background-color: wheat;
+}
+a{
+    color: black;
+}
+a:hover{
+    color: greenyellow;
+    text-shadow: brown 2px 2px;
+}
+div{
+    
+border: dashed 10px black;
+
+}

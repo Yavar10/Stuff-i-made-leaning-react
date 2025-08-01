@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar with Heading and Images</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 10px 20px;
+    }
+
+    .nav-left, .nav-right {
+      width: 100px;
+    }
+
+    .nav-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .nav-center h1 {
+      color: white;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .nav-center {
+      flex-grow: 1;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="WhatsApp Image 2024-10-11 at 22.54.26_312d0085.jpg" alt="Left Image" class="nav-image">
+      </div>
+      <div class="nav-center">
+        <h1>My Website</h1>
+      </div>
+      <div class="nav-right">
+        <img src="WhatsApp Image 2024-10-11 at 22.58.41_b5e0d807.jpg" alt="Right Image" class="nav-image">
+      </div>
+    </nav>
+  </header>
+</body>
+</html>
