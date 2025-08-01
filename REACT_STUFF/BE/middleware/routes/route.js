@@ -5,7 +5,7 @@ const router = express.Router()
 const auth = function (req,res,next) {
     console.log("I am inside auth wala middleware");
 
-    //tumhari sahayta k liye ek dummy user add krra hu 
+    //tumhari sahayta k liye ek dummy user add krra hu
     req.user = {userId:1, role:"student"};
 
     if(req.user) {
@@ -13,7 +13,7 @@ const auth = function (req,res,next) {
         next();
     }
     else {
-        //if not a valid user 
+        //if not a valid user
         res.json({
             success:false,
             message: "Not a Valid User",
@@ -51,7 +51,6 @@ const isAdmin = function (req,res,next) {
 }
 
 //routes
-
 router.get("/student", auth, isStudent, (req,res) => {
     console.log("I am inside student route");
     res.send("Students specific page");
